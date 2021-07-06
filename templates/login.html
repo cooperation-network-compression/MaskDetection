@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <link rel="icon" href="{{url_for('static',filename='demo_images/favicon.ico')}}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/signin/">
+
+    <title>登录</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/examples/signin/signin.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <a href="{{ url_for('index') }}">首页</a>
+      {% if name %}
+        <a href="{{ url_for('photo') }}">{{name}}, nice to meet you!</p>
+      {% else %}
+            <p>未登录</p>
+      {% endif %}
+    </div>
+    <div class="container">
+      {% if error %}
+        <p id="emsize">{{warning}}</p> 
+      {% endif %}
+      <form class="form-signin" method="get" action="/loginuser">
+        <h2 class="form-signin-heading">请登录</h2>
+        <label for="inputusername" class="sr-only">用户名</label>
+        <input type="text" id="inputusername" class="form-control"  placeholder="username" name='name' required autofocus>
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name='password' required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住密码
+          </label>
+        </div>
+        {% if error %}
+        <p id="emsize">{{error}}</p> 
+        {% endif %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        <a href="{{ url_for('register') }}" class="btn btn-lg btn-primary btn-block" role="button">还未注册，点击注册</a>
+      </form>
+
+    </div> <!-- /container -->
+  </body>
+</html>
+

@@ -1,0 +1,156 @@
+img {
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+#emsize{
+  text-align: center;
+  font-size: 20px;
+}
+#img {
+  width: 80%;
+  margin-top: 10px;
+}
+#center {
+  text-align: center;
+}
+
+#text1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Apercu;
+  border-radius: 10px;
+}
+#text-container {
+  width: 100%;
+  text-align: center;
+}
+
+/* #instruction {
+  margin-top: 20px;
+} */
+
+.result-color {
+  color: #0000CD;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fileUploader {
+  opacity: 0;
+}
+
+
+#size-left {
+  width: 30%;
+  float: left;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#left{
+  float: left;
+  max-width: 70%;
+  height: auto;
+}
+
+#btnoffset {
+  margin-top: 1em;
+  padding: .6em 2em;
+  line-height: 2;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: Apercu;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#uploader-btn:hover {
+  color: white;
+  background-color:  #DC143C;
+  border: solid 2px  #DC143C;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* global */  
+main {
+  max-width: 640px;
+  margin: auto;
+  padding: 40px 0 30px 0;
+}
+
+.tabs {
+  overflow: hidden;
+}
+
+.button {
+  cursor: pointer;
+  text-transform: none;
+}
+
+.small-icon {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+/* 导航栏超链接 */
+.navbar a{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+.navbar p{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+}
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+  background-color: white;
+  color: black;
+}
+.small-text {
+  font-size: 12px;
+}
+
+.btn {
+  text-transform: none;
+}
+
+
+.link:hover {
+  border-bottom: 1px solid black;
+}
+
+span.badge.new:after{
+  content: " left";
+}
+
+footer {
+  margin: 0 0 15px 0;
+}
+
+
+
+
+
+
+

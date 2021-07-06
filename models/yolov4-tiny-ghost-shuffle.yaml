@@ -1,0 +1,39 @@
+# parameters
+nc: 2  # number of classes
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
+
+# anchors
+anchors:
+  - [10,14, 23,27, 37,58]  # P4/16
+  - [81,82, 135,169, 344,319]  # P5/32
+
+# YOLOv4-tiny backbone
+backbone:
+  # [from, number, module, args]
+  [[-1, 1, Convleaky, [32, 3, 2]],  # 0-P1/2
+   [-1, 1, Convleaky, [64, 3, 2]],  # 1-P2/4
+   [-1, 1, Resblock_body, [128]],
+   [-1, 1, nn.MaxPool2d, [2, 2, 0]],  # 3-P3/8
+   [-1, 1, Resblock_body, [256]],
+   [-1, 1, nn.MaxPool2d, [2, 2, 0]],  # 5-P4/16
+   [-1, 1, Convleaky, [256, 3, 1]],
+   [-1, 1, Bottleneckyolov4, [256]],
+   [-1, 1, Convleaky, [256, 1, 1]],
+   [[-1, 6], 1, Concat, [1]],
+   [-1, 1, nn.MaxPool2d, [2, 2, 0]],  # 10-P5/32
+  ]
+
+# YOLOv3-tiny head
+head:
+  [[-1, 1, Convleaky, [512, 3, 1]],
+   [-1, 1, Convleaky, [256, 1, 1]],
+   [-1, 1, Convleaky, [512, 3, 1]],
+   [-1, 1, Convleaky, [512, 1, 1]], # 14 (P5/32-large)
+   [-3, 1, Convleaky, [128, 1, 1]],
+   [-1, 1, nn.Upsample, [None, 2, 'nearest']],
+   [[-1, 8], 1, Concat, [1]],  # cat backbone P4
+   [-1, 1, Convleaky, [256, 3, 1]],
+   [-1, 1, Convleaky, [256, 1, 1]], # 19 (P4/16-medium)
+   [[19, 14], 1, Detect, [nc, anchors]],  # Detect(P4, P5)
+  ]

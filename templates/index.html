@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="">
+    <meta name="description" content="人脸口罩佩戴检测">
+    <meta name="author" content="">
+    <link rel="icon" href="{{url_for('static',filename='demo_images/favicon.ico')}}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/cover/">
+
+    <title>人脸口罩佩戴检测系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/examples/cover/cover.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand" ></h3>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">基于YOLOv5增强模型的口罩佩戴检测</h1>
+            <p class="lead">This is a face mask wearing detection system based on enhanced yolov5 model. The system provides two modes of image detection and real-time detection. The former can get the detailed information of the image by uploading the image, while the latter can realize remote real-time monitoring. When there is no mask, the system will automatically broadcast the warning until the target wears the mask.</p>
+            <p class="lead">
+              <a href="{{ url_for('login') }}" class="btn btn-lg btn-default">登录</a>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>湖南工业大学<a href="#">计算机学院</a><a href="#"></a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.4/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
